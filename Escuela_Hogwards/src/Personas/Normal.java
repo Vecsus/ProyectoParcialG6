@@ -12,10 +12,11 @@ package Personas;
 public class Normal extends Brujo_Mago implements Volador{
     private String deportef;
 
-    public Normal(String deportef, String nombre, String apellido, int edad, Casas_Hogwards casa, String varita, String cargo) {
-        super(nombre, apellido, edad, casa, varita, cargo);
+    public Normal(String deportef, String nombre, String apellido, Casas_Hogwards casa, String varita, String cargo, int edad) {
+        super(nombre, apellido, casa, varita, cargo, edad);
         this.deportef = deportef;
     }
+
 
     public void setDeportef(String deportef) {
         this.deportef = deportef;
