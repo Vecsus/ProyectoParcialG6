@@ -28,12 +28,12 @@ public class Normal extends Brujo_Mago implements Volador{
 
     @Override
     public void despegar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("El mago normal está a punto de despegar");
     }
 
     @Override
     public void volar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("El mago normal puede volar con su escoba de modelo Nimbus 2000.");
     }
     
     

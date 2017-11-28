@@ -29,12 +29,12 @@ public class Animagos extends Brujo_Mago implements Volador{
 
     @Override
     public void despegar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("El animago està a punto de despegar");
     }
 
     @Override
     public void volar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("El animago vuela con ayuda de su varita.");
     }
     
     
