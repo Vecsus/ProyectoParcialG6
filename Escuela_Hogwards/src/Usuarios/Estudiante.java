@@ -11,4 +11,8 @@ package Usuarios;
  */
 public class Estudiante {
     
+    public void ConsultaCurso(){}
+    public void Registro(){}
+    public void DescripcionVuelo(){}
+    
 }
