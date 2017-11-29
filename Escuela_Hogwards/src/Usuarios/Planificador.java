@@ -11,4 +11,9 @@ package Usuarios;
  */
 public class Planificador {
     
+    public void crearCurso(){}
+    public void crearProfesor(){}
+    public void crearEstudiante(){}
+    public void VerhorariosPlanificados(){}
+    public void ListadoEstudiantes(){}
 }
