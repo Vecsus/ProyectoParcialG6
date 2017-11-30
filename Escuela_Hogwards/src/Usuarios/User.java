@@ -56,6 +56,8 @@ public class User {
         do{
             if(nomusuario.equalsIgnoreCase(usuario)&&password.equalsIgnoreCase(contraseña)){
                 verificacion=false;
+                System.out.println("Ingreso exitoso");
+                System.out.println();
                 if(rol.equalsIgnoreCase("estudiante")){
                     Estudiante est=new Estudiante();
                     est.menuEstudiante();
@@ -64,7 +66,7 @@ public class User {
                     plan.menuplanificador();
                 }
             }else{
-                System.out.println("Su usuario o contraseña es erronea, intente nuevamente.");
+                System.out.println("Su usuario y contraseña no son valido. Por favor intente otra vez.");
             }
         }while(verificacion);
         
