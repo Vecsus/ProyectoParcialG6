@@ -5,6 +5,8 @@
  */
 package Usuarios;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Usuario
@@ -43,5 +45,28 @@ public class User {
         this.contraseña = contraseña;
     }
     
-    
+    public void verificacionregistro(){
+        boolean verificacion=true;
+        Scanner nom=new Scanner(System.in);
+        System.out.println("Ingrese nombre de usuario: ");
+        String nomusuario=nom.next();
+        Scanner pasw=new Scanner(System.in);
+        System.out.println("Ingrese contraseña: ");
+        String password=pasw.next();
+        do{
+            if(nomusuario.equalsIgnoreCase(usuario)&&password.equalsIgnoreCase(contraseña)){
+                verificacion=false;
+                if(rol.equalsIgnoreCase("estudiante")){
+                    Estudiante est=new Estudiante();
+                    est.menuEstudiante();
+                }else{
+                    Planificador plan= new Planificador();
+                    plan.menuplanificador();
+                }
+            }else{
+                System.out.println("Su usuario o contraseña es erronea, intente nuevamente.");
+            }
+        }while(verificacion);
+        
+    }
 }
