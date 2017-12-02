@@ -10,18 +10,29 @@ package Personas;
  * @author Usuario
  */
 public class Brujo_Mago {
-    String nombre, apellido, varita, cargo;
+    String nombre, apellido, varita, cargo,fecha_ingreso;
     int edad;
     Casas_Hogwards casa;
-    
-    public Brujo_Mago(String nombre, String apellido, Casas_Hogwards casa, String varita, String cargo, int edad){
+
+    public Brujo_Mago(String nombre, String apellido, String varita, String cargo, String fecha_ingreso, int edad, Casas_Hogwards casa) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.casa = casa;
         this.varita = varita;
         this.cargo = cargo;
+        this.fecha_ingreso = fecha_ingreso;
         this.edad = edad;
+        this.casa = casa;
     }
+
+    public String getFecha_ingreso() {
+        return fecha_ingreso;
+    }
+
+    public void setFecha_ingreso(String fecha_ingreso) {
+        this.fecha_ingreso = fecha_ingreso;
+    }
+    
+
     public String GetNombre(){
         return nombre;
     }
