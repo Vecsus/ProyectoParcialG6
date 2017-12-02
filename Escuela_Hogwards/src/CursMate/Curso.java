@@ -5,6 +5,9 @@
  */
 package CursMate;
 
+import Personas.Brujo_Mago;
+import java.util.ArrayList;
+
 
 
 /**
@@ -13,12 +16,14 @@ package CursMate;
  */
 public class Curso {
     private Materias materia;
+    private Brujo_Mago profesor;
     private String horario;
     private Dias dia;
-    private int capacidad;
+    private int capacidad;    
 
-    public Curso(Materias materia, String horario, Dias dia, int capacidad) {
+    public Curso(Materias materia, Brujo_Mago profesor, String horario, Dias dia, int capacidad) {
         this.materia = materia;
+        this.profesor=profesor;
         this.horario = horario;
         this.dia = dia;
         this.capacidad = capacidad;
