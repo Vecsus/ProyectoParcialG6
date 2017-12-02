@@ -158,7 +158,7 @@ public class Planificador {
     public void crearEstudiante(){
     String nombre,apellido,varita,casa,tipoMagoBruja;int edad;
     Scanner enter=new Scanner(System.in);
-    System.out.println("/**Crear Estudiante**\");
+    System.out.println("/**Crear Estudiante**\\");
     System.out.println("Ingrese Nombre: ");
     nombre=enter.nextLine();
     System.out.println("Ingrese Apellido: ");
@@ -171,19 +171,19 @@ public class Planificador {
     System.out.println("1. Animago");
     System.out.println("2. Metamorfomago");
     System.out.println("3. Estandar");
-    System.out.println("Elija el tipo mago\bruja que es: ")
+    System.out.println("Elija el tipo mago\bruja que es: ");
     int tipo=enter.nextInt();
     switch(tipo){
-        case: 1
-            tipoMagoBrujo="Animago";
+        case 1:
+            tipoMagoBruja="Animago";
             break;
-        case:2
-            tipoMagoBrujo="Metamorfomago";
-            brak;
-        case:3
-            tipoMagoBrujo="Estandar";
+        case 2:
+            tipoMagoBruja="Metamorfomago";
+            break;
+        case 3:
+            tipoMagoBruja="Estandar";
     }         
-    System.out.println("Desea guardar los dato? S/N: ")
+    System.out.println("Desea guardar los dato? S/N: ");
     String eleccion=enter.nextLine();
     if(eleccion.equalsIgnoreCase("S")){//escritura del archivo.txt
     }
