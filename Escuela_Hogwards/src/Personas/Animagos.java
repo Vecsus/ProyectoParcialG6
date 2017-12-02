@@ -12,10 +12,12 @@ package Personas;
 public class Animagos extends Brujo_Mago implements Volador{
     private String animal;
 
-    public Animagos(String animal, String nombre, String apellido, Casas_Hogwards casa, String varita, String cargo, int edad) {
-        super(nombre, apellido, casa, varita, cargo, edad);
+    public Animagos(String animal, String nombre, String apellido, String varita, String cargo, String fecha_ingreso, int edad, Casas_Hogwards casa) {
+        super(nombre, apellido, varita, cargo, fecha_ingreso, edad, casa);
         this.animal = animal;
     }
+
+
 
 
 
