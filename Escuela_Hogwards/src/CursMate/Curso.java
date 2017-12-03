@@ -30,7 +30,7 @@ public class Curso {
 
     @Override
     public String toString(){
-        String curso=getMateria().name()+","+getProfesor().GetNombre()+","+getProfesor().GetApellido()+","+getCapacidad()+","+getHorario();
+        String curso=getMateria().name()+","+getProfesor().GetNombre()+","+getProfesor().GetApellido()+","+getCapacidad()+","+getDia().name()+","+getHorario();
         return curso;
     }
     public Materias getMateria() {
