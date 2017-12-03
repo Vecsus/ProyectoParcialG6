@@ -19,12 +19,12 @@ public class Metamorfomago extends Brujo_Mago implements Volador{
 
     @Override
     public String toString(){
-        String normal=GetNombre()+", "+GetApellido()+", "+GetEdad()+" ,"+GetVarita()+" ,"+GetCasa().name()+" ,M";
+        String normal=GetNombre()+","+GetApellido()+","+GetEdad()+","+GetVarita()+","+GetCasa().name()+",M";
         return normal;
     }
     
     public String toStringProfesor(){
-        String normal=GetNombre()+", "+GetApellido()+", "+GetEdad()+" ,"+GetVarita()+" ,"+getFecha_ingreso()+" ,M ,"+getPocion();
+        String normal=GetNombre()+","+GetApellido()+","+GetEdad()+","+GetVarita()+","+getFecha_ingreso()+",M,"+getPocion();
         return normal;
     }
 

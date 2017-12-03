@@ -1,0 +1,2 @@
+Nimphadora,Tonks,45,pino negro,14/04/2015,A,gato,hechizo1
+Albus,Dumbledore,178,sauco,18/10/1900,N,quidditch

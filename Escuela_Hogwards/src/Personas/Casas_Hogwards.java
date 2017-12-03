@@ -10,5 +10,5 @@ package Personas;
  * @author Usuario
  */
 public enum Casas_Hogwards{
-    Grifindor,Ravenclaw,Hufflepuff,Slytherin
+    Griffindor,Ravenclaw,Hufflepuff,Slytherin
 }

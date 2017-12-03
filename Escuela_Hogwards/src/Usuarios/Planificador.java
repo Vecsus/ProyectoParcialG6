@@ -18,7 +18,7 @@ public class Planificador extends User {
     
     
 
-    private Planificador(String nusuario, String contraseña, Brujo_Mago est,String rol) {
+    public Planificador(String nusuario, String contraseña, Brujo_Mago est,String rol) {
         super(nusuario, contraseña, est,rol);
     }
     public void menuplanificador(){
