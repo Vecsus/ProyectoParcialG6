@@ -14,10 +14,9 @@ import java.util.ArrayList;
  * @author Usuario
  */
 public class Estudiante extends User {
-        
 
-    public Estudiante(String rol, String usuario, String contraseña) {
-        super(rol, usuario, contraseña);
+    public Estudiante(String nusuario, String contraseña, Brujo_Mago est,String rol) {
+        super(nusuario, contraseña, est,rol);
     }
     public void menuEstudiante(){
         Scanner menE=new Scanner(System.in);

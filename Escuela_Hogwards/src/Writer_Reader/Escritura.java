@@ -7,6 +7,7 @@ package Writer_Reader;
 
 import CursMate.*;
 import Personas.*;
+import Usuarios.User;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -24,6 +25,8 @@ public class Escritura {
     private final File student = new File(s+"estudiantes.txt");
     private final File teacher = new File(s+"profesores.txt");
     private final File curse = new File(s+"cursos.txt");
+    private final File users = new File(s+"usuarios.txt");
+    
         FileWriter fr = null;
         BufferedWriter br = null;
         PrintWriter frr = null;
@@ -108,6 +111,31 @@ public class Escritura {
     frr=new PrintWriter(br);
     Curs.forEach((cursos8) -> {       
         frr.append(cursos8.toString());
+        });
+    } catch (IOException e) {
+        System.out.println("Error: "+e);
+
+    }finally{
+            try {
+                frr.close();
+                br.close();
+                fr.close();
+            } catch (IOException ex) {
+                System.out.println("Error: "+ex);
+            }
+    }
+    }
+    
+    public void escriturausuar(ArrayList<User>us){
+                
+    try {
+        //Apertura del fichero y creacion de BufferedReader para poder
+        //hacer una escritura comoda (disponer del metodo readLine()).
+    fr = new FileWriter(curse);
+    br = new BufferedWriter(fr);
+    frr=new PrintWriter(br);
+    us.forEach((usuar) -> {       
+        frr.append(usuar.toString());
         });
     } catch (IOException e) {
         System.out.println("Error: "+e);

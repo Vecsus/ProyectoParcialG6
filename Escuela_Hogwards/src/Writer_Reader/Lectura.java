@@ -10,6 +10,7 @@ import CursMate.Curso;
 import CursMate.Dias;
 import CursMate.Materias;
 import Personas.*;
+import Usuarios.User;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -22,6 +23,7 @@ public class Lectura {
     String stud=s+"estudiantes.txt";
     String tea=s+"profesores.xt";
     String par=s+"cursos.txt";
+    String use=s+"usuarios.txt";
     
     File archivo = null;
     FileReader fr = null;
@@ -30,7 +32,7 @@ public class Lectura {
         try {
         //Apertura del fichero y creacion de BufferedReader para poder
         //hacer una lectura comoda (disponer del metodo readLine()).
-        InputStream inputstream = Lectura.class.getResourceAsStream(s+"estudiantes.txt");
+        InputStream inputstream = Lectura.class.getResourceAsStream(stud);
         InputStreamReader inputreader = new InputStreamReader(inputstream);
         br = new BufferedReader(inputreader);
         // Lectura del fichero
@@ -69,7 +71,7 @@ public class Lectura {
         try {
         //Apertura del fichero y creacion de BufferedReader para poder
         //hacer una lectura comoda (disponer del metodo readLine()).
-        InputStream inputstream = Lectura.class.getResourceAsStream(s+"estudiantes.txt");
+        InputStream inputstream = Lectura.class.getResourceAsStream(tea);
         InputStreamReader inputreader = new InputStreamReader(inputstream);
         br = new BufferedReader(inputreader);
         // Lectura del fichero
@@ -110,7 +112,7 @@ public class Lectura {
         try {
         //Apertura del fichero y creacion de BufferedReader para poder
         //hacer una lectura comoda (disponer del metodo readLine()).
-        InputStream inputstream = Lectura.class.getResourceAsStream(s+"estudiantes.txt");
+        InputStream inputstream = Lectura.class.getResourceAsStream(par);
         InputStreamReader inputreader = new InputStreamReader(inputstream);
         br = new BufferedReader(inputreader);
         // Lectura del fichero
@@ -142,6 +144,45 @@ public class Lectura {
     }
     }
 
+    public void lecturuse(ArrayList<User>usuarios){
+        ArrayList<Brujo_Mago>est = new ArrayList<>();
+        lecturestu(est);
+        try {
+        //Apertura del fichero y creacion de BufferedReader para poder
+        //hacer una lectura comoda (disponer del metodo readLine()).
+        InputStream inputstream = Lectura.class.getResourceAsStream(use);
+        InputStreamReader inputreader = new InputStreamReader(inputstream);
+        br = new BufferedReader(inputreader);
+        // Lectura del fichero
+        String linea;
+        while ((linea = br.readLine()) != null) {
+            String[]Lin=linea.split(",");
+            for(User studen:usuarios){
+                for(Brujo_Mago estud:est){
+                    if(estud.GetNombre().equalsIgnoreCase(Lin[2])&&estud.GetApellido().equalsIgnoreCase(Lin[3])){
+                    User us=new User(Lin[0], Lin[1], estud, Lin[Lin.length-1]);
+                    usuarios.add(us);
+
+                    System.out.println(linea);
+                    }
+                }
+            }
+        }
+    } catch (IOException | NumberFormatException e) {
+            System.out.println("Error: "+e);;
+    }finally {
+        // En el finally cerramos el fichero, para asegurarnos
+        // que se cierra tanto si todo va bien como si salta 
+        // una excepcion.
+        try {
+            if (null != fr) {
+                fr.close();
+            }
+        } catch (IOException e2) {
+            e2.printStackTrace();
+        } 
+    }
+    }
         public static void main(String[] arg) {
         
         }

@@ -18,8 +18,8 @@ public class Planificador extends User {
     
     
 
-    public Planificador(String rol, String usuario, String contraseña) {
-        super(rol, usuario, contraseña);
+    private Planificador(String nusuario, String contraseña, Brujo_Mago est,String rol) {
+        super(nusuario, contraseña, est,rol);
     }
     public void menuplanificador(){
         Scanner men=new Scanner(System.in);
