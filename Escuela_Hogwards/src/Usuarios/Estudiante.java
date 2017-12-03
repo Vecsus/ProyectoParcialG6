@@ -13,9 +13,12 @@ import java.util.ArrayList;
  *
  * @author Usuario
  */
-public class Estudiante {
-        public Materias[]materias=new Materias[]{Materias.Pociones,Materias.Defensascontraartesocuras,Materias.Adivinacion,Materias.Astronomia,Materias.Historiademagia,Materias.Herbologia,Materias.Encantamientos,Materias.Vuelo};
-        ArrayList<Curso> cursos;
+public class Estudiante extends User {
+        
+
+    public Estudiante(String rol, String usuario, String contraseña) {
+        super(rol, usuario, contraseña);
+    }
     public void menuEstudiante(){
         Scanner menE=new Scanner(System.in);
         System.out.println("Escoja la opcion que desee hacer: ");

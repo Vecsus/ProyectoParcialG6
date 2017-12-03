@@ -5,6 +5,12 @@
  */
 package Usuarios;
 
+import CursMate.Curso;
+import CursMate.Dias;
+import CursMate.Materias;
+import Personas.Brujo_Mago;
+import Personas.Casas_Hogwards;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -14,6 +20,13 @@ import java.util.Scanner;
 public class User {
     private String rol;
     private String usuario,contraseña;
+    public Materias[]materias=new Materias[]{Materias.Pociones,Materias.Defensascontraartesocuras,Materias.Adivinacion,Materias.Astronomia,Materias.Historiademagia,Materias.Herbologia,Materias.Encantamientos,Materias.Vuelo};
+    public ArrayList<Brujo_Mago> profesores = new ArrayList();
+    public Dias[]dias=new Dias[]{Dias.Lunes,Dias.Martes,Dias.Miercoles,Dias.Jueves,Dias.Viernes,Dias.Sabado,Dias.Domingo};
+    public Casas_Hogwards[]casashog=new Casas_Hogwards[]{Casas_Hogwards.Grifindor,Casas_Hogwards.Hufflepuff,Casas_Hogwards.Ravenclaw,Casas_Hogwards.Slytherin};
+    public ArrayList<Curso> cursos = new ArrayList();
+    public ArrayList<Brujo_Mago> profes=new ArrayList();
+    public ArrayList<Brujo_Mago> estudiantes = new ArrayList();
 
     public User(String rol, String usuario, String contraseña) {
         this.rol = rol;
