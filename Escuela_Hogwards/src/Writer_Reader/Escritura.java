@@ -21,9 +21,9 @@ import java.util.ArrayList;
 public class Escritura {
     //Ruta relativa para la escritura de textos.
     String s= "src/Resources/";
-    private final File student = new File(this.s+"estudiantes.txt");
-    private final File teacher = new File(this.s+"profesores.txt");
-    private final File curse = new File(this.s+"cursos.txt");
+    private final File student = new File(s+"estudiantes.txt");
+    private final File teacher = new File(s+"profesores.txt");
+    private final File curse = new File(s+"cursos.txt");
         FileWriter fr = null;
         BufferedWriter br = null;
         PrintWriter frr = null;

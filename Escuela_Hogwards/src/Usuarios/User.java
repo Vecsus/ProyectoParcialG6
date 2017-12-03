@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public class User {
     private String rol;
-    private String usuario,contraseña;
+    private String nusuario,contraseña;
     public Materias[]materias=new Materias[]{Materias.Pociones,Materias.Defensascontraartesocuras,Materias.Adivinacion,Materias.Astronomia,Materias.Historiademagia,Materias.Herbologia,Materias.Encantamientos,Materias.Vuelo};
     public ArrayList<Brujo_Mago> profesores = new ArrayList();
     public Dias[]dias=new Dias[]{Dias.Lunes,Dias.Martes,Dias.Miercoles,Dias.Jueves,Dias.Viernes,Dias.Sabado,Dias.Domingo};
@@ -27,10 +27,11 @@ public class User {
     public ArrayList<Curso> cursos = new ArrayList();
     public ArrayList<Brujo_Mago> profes=new ArrayList();
     public ArrayList<Brujo_Mago> estudiantes = new ArrayList();
+    public ArrayList<User>usuarios=new ArrayList<>();
 
-    public User(String rol, String usuario, String contraseña) {
+    public User(String rol, String nusuario, String contraseña) {
         this.rol = rol;
-        this.usuario = usuario;
+        this.nusuario = nusuario;
         this.contraseña = contraseña;
     }
 
@@ -42,12 +43,12 @@ public class User {
         this.rol = rol;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getNusuario() {
+        return nusuario;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setNusuario(String nusuario) {
+        this.nusuario = nusuario;
     }
 
     public String getContraseña() {
@@ -67,20 +68,23 @@ public class User {
         System.out.println("Ingrese contraseña: ");
         String password=pasw.next();
         do{
-            if(nomusuario.equalsIgnoreCase(usuario)&&password.equalsIgnoreCase(contraseña)){
-                verificacion=false;
-                System.out.println("Ingreso exitoso");
-                System.out.println();
-                if(rol.equalsIgnoreCase("estudiante")){
-                    Estudiante est=new Estudiante();
-                    est.menuEstudiante();
-                }else{
-                    Planificador plan= new Planificador();
-                    plan.menuplanificador();
+            for(User usuario: usuarios){
+                if(nomusuario.equalsIgnoreCase(usuario.getNusuario())&&password.equalsIgnoreCase(usuario.getContraseña())){
+                    verificacion=false;
+                    System.out.println("Ingreso exitoso");
+                    System.out.println();
+                    if(rol.equalsIgnoreCase("estudiante")){
+                        Estudiante est =(Estudiante)usuario;
+                        est.menuEstudiante();
+                    }else{
+                        Planificador plan= (Planificador)usuario;
+                        plan.menuplanificador();
+                    }
                 }
-            }else{
-                System.out.println("Su usuario y contraseña no son valido. Por favor intente otra vez.");
             }
+                if(verificacion=false){
+                    System.out.println("Su usuario y contraseña no son valido. Por favor intente otra vez.");
+                }
         }while(verificacion);
         
     }

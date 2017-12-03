@@ -6,7 +6,6 @@
 package CursMate;
 
 import Personas.Brujo_Mago;
-import java.util.ArrayList;
 
 
 
@@ -31,7 +30,7 @@ public class Curso {
 
     @Override
     public String toString(){
-        String curso=getMateria().name()+" ,"+getProfesor().GetNombre()+" "+getProfesor().GetApellido()+", "+getCapacidad()+" ,"+getHorario();
+        String curso=getMateria().name()+","+getProfesor().GetNombre()+","+getProfesor().GetApellido()+","+getCapacidad()+","+getHorario();
         return curso;
     }
     public Materias getMateria() {

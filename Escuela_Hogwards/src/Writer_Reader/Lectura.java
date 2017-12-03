@@ -14,23 +14,31 @@ import java.io.*;
  */
 public class Lectura {
         String s= "/Resources/";
-        public static void main(String[] arg) {
+        String stud=s+"estudiantes.txt";
+        String tea=s+"profesores.xt";
+        String par=s+"cursos.txt";
         BufferedReader br = null;
-
-        try {
+        public void lecturestu(){
+            try {
             //Apertura del fichero y creacion de BufferedReader para poder
             //hacer una lectura comoda (disponer del metodo readLine()).
-            InputStream inputstream = Lectura.class.getResourceAsStream("/Resources/archivo.txt");
+            InputStream inputstream = Lectura.class.getResourceAsStream(s+"estudiantes.txt");
             InputStreamReader inputreader = new InputStreamReader(inputstream);
             br = new BufferedReader(inputreader);
             // Lectura del fichero
             String linea;
             while ((linea = br.readLine()) != null) {
+                
                 System.out.println(linea);
             }
         } catch (Exception e) {
             e.printStackTrace();
-
-        } }
+        } 
+        }
     
+        
+        public static void main(String[] arg) {
+        
+        }
+        
 }
