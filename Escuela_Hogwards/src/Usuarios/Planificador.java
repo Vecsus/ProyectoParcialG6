@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import CursMate.*;
 import Personas.*;
 import Writer_Reader.Escritura;
+import Writer_Reader.Lectura;
 import java.util.Scanner;
 
 /**
@@ -16,7 +17,7 @@ import java.util.Scanner;
  */
 public class Planificador extends User {
     
-    
+            Lectura et=new Lectura();
 
     public Planificador(String nusuario, String contraseña, Brujo_Mago est,String rol) {
         super(nusuario, contraseña, est,rol);
@@ -54,6 +55,8 @@ public class Planificador extends User {
     }
     public void crearCurso(){
         Materias materia;Brujo_Mago profesor;int capacidad;Dias dia;String horario;
+        et.lecturprofe(profesores);
+        et.lecturcurso(cursos);
         //Eleccion de materia
         Scanner mat= new Scanner(System.in);
         System.out.println("/''MATERIAS ''/");
@@ -69,7 +72,7 @@ public class Planificador extends User {
             System.out.println(i+1+". "+profesores.get(i).GetNombre()+" "+profesores.get(i).GetApellido());
         }
         System.out.println("Elija un profesor del listado: ");
-        profesor=profesores.get(profe.nextInt());
+        profesor=profesores.get(profe.nextInt()-1);
         //Eleccion de capacidad de curso
         Scanner cap=new Scanner(System.in);
         System.out.println("Ingrese la capacidad del curso para "+materia.name());
@@ -105,6 +108,7 @@ public class Planificador extends User {
     public void crearProfesor(){
         String nombre, apellido,fecha_ingreso,varita;int edad;
         Escritura esc=new Escritura();
+        et.lecturprofe(profesores);
                             
         System.out.println("/** CREAR PROFESOR **/");
         Scanner nom=new Scanner(System.in);
@@ -145,12 +149,12 @@ public class Planificador extends User {
                 
                 System.out.println("¿Que hechizo puede usar?: ");
                 Scanner hech=new Scanner(System.in);
-                String hechizo=anim.nextLine();
+                String hechizo=hech.nextLine();
                 
                 Scanner verif=new Scanner(System.in);
                 System.out.println("Desea crear el profesor con la informacion deseada? S/N:  ");
                 if(verif.next().equalsIgnoreCase("S")){
-                    Animagos ani = new Animagos(hechizo,animal,nombre, apellido, varita, fecha_ingreso, edad, null);
+                    Animagos ani = new Animagos(animal,hechizo,nombre, apellido, varita, fecha_ingreso, edad, null);
                     profesores.add(ani);
                     esc.escrituraprof(profesores);
                 }else{
@@ -194,6 +198,7 @@ public class Planificador extends User {
     public void crearEstudiante(){
     String nombre, apellido,varita;int edad; Casas_Hogwards casa;
     Escritura est=new Escritura();
+    et.lecturestu(estudiantes);
     System.out.println("/** CREAR ESTUDIANTE **/");
     Scanner nom=new Scanner(System.in);
         System.out.println("Ingrese Nombre: ");
@@ -235,7 +240,7 @@ public class Planificador extends User {
                 
                 System.out.println("¿Que hechizo puede usar?: ");
                 Scanner hech=new Scanner(System.in);
-                String hechizo=anim.nextLine();
+                String hechizo=hech.nextLine();
                 
                 Animagos ani = new Animagos(hechizo,animal,nombre, apellido, varita, null, edad, casa);
                 Scanner verif=new Scanner(System.in);

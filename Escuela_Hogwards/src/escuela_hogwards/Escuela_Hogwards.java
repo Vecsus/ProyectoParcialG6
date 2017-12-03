@@ -37,11 +37,11 @@ public class Escuela_Hogwards {
                     System.out.println("Ingreso exitoso");
                     System.out.println();
                     if(usuario.getRol().equalsIgnoreCase("estudiante")){
-                        Estudiante est =new Estudiante(nomusuario, password, usuario.getEst(), "estudiante");
-                        est.menuEstudiante();
+                        Estudiante Stu =new Estudiante(nomusuario, password, usuario.getEst(), "estudiante");
+                        Stu.menuEstudiante();
                     }else{
-                        Planificador plan=new Planificador(nomusuario, password, usuario.getEst(), "planificador");
-                        plan.menuplanificador();
+                        Planificador Plan=new Planificador(nomusuario, password, usuario.getEst(), "planificador");
+                        Plan.menuplanificador();
                     }
                 }
             }

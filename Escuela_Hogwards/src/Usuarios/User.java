@@ -26,9 +26,9 @@ public class User {
     public Materias[]materias=new Materias[]{Materias.Pociones,Materias.Defensascontraartesocuras,Materias.Adivinacion,Materias.Astronomia,Materias.Historiademagia,Materias.Herbologia,Materias.Encantamientos,Materias.Vuelo};
     public Dias[]dias=new Dias[]{Dias.Lunes,Dias.Martes,Dias.Miercoles,Dias.Jueves,Dias.Viernes,Dias.Sabado,Dias.Domingo};
     public Casas_Hogwards[]casashog=new Casas_Hogwards[]{Casas_Hogwards.Griffindor,Casas_Hogwards.Hufflepuff,Casas_Hogwards.Ravenclaw,Casas_Hogwards.Slytherin};
-    public ArrayList<Curso> cursos = new ArrayList();
-    public ArrayList<Brujo_Mago> estudiantes = new ArrayList();
-    public ArrayList<Brujo_Mago> profesores = new ArrayList();
+    public ArrayList<Curso> cursos = new ArrayList<Curso>();
+    public ArrayList<Brujo_Mago> estudiantes = new ArrayList<Brujo_Mago>();
+    public ArrayList<Brujo_Mago> profesores = new ArrayList<Brujo_Mago>();
 
     public User(String nusuario, String contraseña, Brujo_Mago est,String rol) {
         this.rol = rol;

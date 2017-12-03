@@ -40,15 +40,16 @@ public class Escritura {
     frr=new PrintWriter(br);
     for(Brujo_Mago estudiante:Brujo){
         if(estudiante instanceof Normal){
-            estudiante=(Normal)estudiante;
-            frr.append(estudiante.toString());
+            Normal estudiantes=(Normal)estudiante;
+            frr.append(estudiantes.toString());
         }
         if(estudiante instanceof Animagos){
-           estudiante=(Animagos)estudiante;
-            frr.append(estudiante.toString()); 
-        }else{
-            estudiante=(Metamorfomago)estudiante;
-            frr.append(estudiante.toString());
+           Animagos estudiantes=(Animagos)estudiante;
+            frr.append(estudiantes.toString()); 
+        }
+        if(estudiante instanceof Metamorfomago){
+            Metamorfomago estudiantes=(Metamorfomago)estudiante;
+            frr.append(estudiantes.toString());
         }              
     }
 
@@ -79,10 +80,10 @@ public class Escritura {
             frr.append(profes.toStringProfesor());
         }
         if(profesor instanceof Animagos){
-            Normal profes=(Normal)profesor;
+            Animagos profes=(Animagos)profesor;
             frr.append(profes.toStringProfesor());
         }else{
-            Normal profes=(Normal)profesor;
+            Metamorfomago profes=(Metamorfomago)profesor;
             frr.append(profes.toStringProfesor());
         }              
     }

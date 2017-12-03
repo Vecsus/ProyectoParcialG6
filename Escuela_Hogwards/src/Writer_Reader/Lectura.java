@@ -125,8 +125,6 @@ public class Lectura {
                 if(pr.GetNombre().equalsIgnoreCase(Lin[1])&&pr.GetApellido().equalsIgnoreCase(Lin[2])){
                 Curso cur=new Curso(Materias.valueOf(Lin[0]), pr, Lin[Lin.length-1], Dias.valueOf(Lin[4]), Integer.parseInt(Lin[3]));
                 curs.add(cur);
-
-                System.out.println(linea);
                 }
             }
         }
