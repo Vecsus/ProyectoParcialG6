@@ -7,6 +7,7 @@ package Usuarios;
 import java.util.ArrayList;
 import CursMate.*;
 import Personas.*;
+import Writer_Reader.Escritura;
 import java.util.Scanner;
 
 /**
@@ -19,6 +20,7 @@ public class Planificador {
     public Dias[]dias=new Dias[]{Dias.Lunes,Dias.Martes,Dias.Miercoles,Dias.Jueves,Dias.Viernes,Dias.Sabado,Dias.Domingo};
     public Casas_Hogwards[]casashog=new Casas_Hogwards[]{Casas_Hogwards.Grifindor,Casas_Hogwards.Hufflepuff,Casas_Hogwards.Ravenclaw,Casas_Hogwards.Slytherin};
     public ArrayList<Curso> cursos = new ArrayList();
+    public ArrayList<Brujo_Mago> estudiantes = new ArrayList();
     public void menuplanificador(){
         Scanner men=new Scanner(System.in);
         System.out.println("Escoja la opcion que desee hacer: ");
@@ -52,7 +54,6 @@ public class Planificador {
     }
     public void crearCurso(){
         Materias materia;Brujo_Mago profesor;int capacidad;Dias dia;String horario;
-        ArrayList<Curso> cursos = new ArrayList();
         //Eleccion de materia
         Scanner mat= new Scanner(System.in);
         System.out.println("/''MATERIAS ''/");
@@ -95,10 +96,16 @@ public class Planificador {
             System.out.println("CAPACIDAD: "+capacidad);
             System.out.println("HORARIO: "+horario);
             cursos.add(curso);
-        }
+            Escritura esc=new Escritura();
+            esc.escrituracurso(cursos);
+        }else{
+            menuplanificador();
+            }
     }
     public void crearProfesor(){
-        String nombre, apellido,fecha_ingreso,varita;int edad; Casas_Hogwards casa;
+        String nombre, apellido,fecha_ingreso,varita;int edad;
+        Escritura esc=new Escritura();
+                            
         System.out.println("/** CREAR PROFESOR **/");
         Scanner nom=new Scanner(System.in);
         System.out.println("Ingrese Nombre: ");
@@ -120,13 +127,6 @@ public class Planificador {
         System.out.println("Varita: ");
         varita=var.nextLine();
         
-        for(int i=0;i<casashog.length;i++){
-            System.out.println(i+1+". "+casashog[i].name());
-        }
-        System.out.println("Seleccion a la casa que pertenece:");
-        Scanner cas= new Scanner(System.in);
-        casa=casashog[cas.nextInt()-1];
-        
         System.out.println("Tipos de Magos/Brujas");
         System.out.println("1. Animago");
         System.out.println("2. Metamorfomago");
@@ -141,16 +141,20 @@ public class Planificador {
             case 1:
                 System.out.println("¿En que clase de animal puede convertirse?: ");
                 Scanner anim=new Scanner(System.in);
-                String animal, hechizo;
-                animal=anim.nextLine();
-                Scanner hech = new Scanner(System.in);
-                System.out.println("Ingrese el hechizo que usa:");
-                hechizo = hech.nextLine();
+                String animal=anim.nextLine();
+                
+                System.out.println("¿Que hechizo puede usar?: ");
+                Scanner hech=new Scanner(System.in);
+                String hechizo=anim.nextLine();
                 
                 Scanner verif=new Scanner(System.in);
-                System.out.println("Desea crear el curso con la informacion deseada? S/N:  ");
+                System.out.println("Desea crear el profesor con la informacion deseada? S/N:  ");
                 if(verif.next().equalsIgnoreCase("S")){
-                    Animagos ani = new Animagos(animal, hechizo,nombre, apellido, varita, fecha_ingreso, edad, casa);
+                    Animagos ani = new Animagos(hechizo,animal,nombre, apellido, varita, fecha_ingreso, edad, null);
+                    profesores.add(ani);
+                    esc.escrituraprof(profesores);
+                }else{
+                    menuplanificador();
                 }
                 break;
             case 2:
@@ -160,9 +164,13 @@ public class Planificador {
                 pocion=poc.nextLine();
                 
                 Scanner verif2=new Scanner(System.in);
-                System.out.println("Desea crear el curso con la informacion deseada? S/N:  ");
+                System.out.println("Desea crear el profesor con la informacion deseada? S/N:  ");
                 if(verif2.next().equalsIgnoreCase("S")){
-                    Metamorfomago met= new Metamorfomago(pocion,nombre, apellido, varita, fecha_ingreso, edad, casa);
+                    Metamorfomago met= new Metamorfomago(pocion,nombre, apellido, varita, fecha_ingreso, edad, null);
+                    profesores.add(met);
+                    esc.escrituraprof(profesores);
+                }else{
+                    menuplanificador();
                 }
                 break;
             case 3:
@@ -171,15 +179,21 @@ public class Planificador {
                 String deporte=dep.nextLine();
                 
                 Scanner verif3=new Scanner(System.in);
-                System.out.println("Desea crear el curso con la informacion deseada? S/N:  ");
+                System.out.println("Desea crear el profesor con la informacion deseada? S/N:  ");
                 if(verif3.next().equalsIgnoreCase("S")){
-                    Normal norm = new Normal(deporte, nombre, apellido, varita, fecha_ingreso, edad, casa);
+                    Normal norm = new Normal(deporte, nombre, apellido, varita, fecha_ingreso, edad, null);
+                    profesores.add(norm);
+                    esc.escrituraprof(profesores);
+                }else{
+                    menuplanificador();
                 }
+                break;
         }
         
     }
     public void crearEstudiante(){
-    String nombre, apellido,fecha_ingreso,varita;int edad; Casas_Hogwards casa;
+    String nombre, apellido,varita;int edad; Casas_Hogwards casa;
+    Escritura est=new Escritura();
     System.out.println("/** CREAR ESTUDIANTE **/");
     Scanner nom=new Scanner(System.in);
         System.out.println("Ingrese Nombre: ");
@@ -192,10 +206,6 @@ public class Planificador {
         Scanner eda=new Scanner(System.in);
         System.out.println("Ingrese Edad: ");
         edad=eda.nextInt();
-        
-        Scanner fech = new Scanner(System.in);
-        System.out.println("Ingrese la fecha de ingreso:");
-        fecha_ingreso = fech.nextLine();
 
         Scanner var=new Scanner(System.in);
         System.out.println("Varita: ");
@@ -221,16 +231,20 @@ public class Planificador {
             case 1:
                 System.out.println("¿En que clase de animal puede convertirse?: ");
                 Scanner anim=new Scanner(System.in);
-                String animal, hechizo;
-                animal=anim.nextLine();
-                Scanner hech = new Scanner(System.in);
-                System.out.println("Ingrese el hechizo que usa:");
-                hechizo = hech.nextLine();
-                Animagos ani = new Animagos(animal, hechizo,nombre, apellido, varita, fecha_ingreso, edad, casa);
+                String animal=anim.nextLine();
+                
+                System.out.println("¿Que hechizo puede usar?: ");
+                Scanner hech=new Scanner(System.in);
+                String hechizo=anim.nextLine();
+                
+                Animagos ani = new Animagos(hechizo,animal,nombre, apellido, varita, null, edad, casa);
                 Scanner verif=new Scanner(System.in);
-                System.out.println("Desea crear el curso con la informacion deseada? S/N:  ");
+                System.out.println("Desea crear el estudiante con la informacion deseada? S/N:  ");
                 if(verif.next().equalsIgnoreCase("S")){
-
+                    estudiantes.add(ani);
+                    est.escrituraest(estudiantes);
+                }else{
+                    menuplanificador();
                 }
                 break;
             case 2:
@@ -238,23 +252,30 @@ public class Planificador {
                 Scanner poc=new Scanner(System.in);
                 String pocion;
                 pocion=poc.nextLine();
-                Metamorfomago met= new Metamorfomago(pocion,nombre, apellido, varita, fecha_ingreso, edad, casa);
+                Metamorfomago met= new Metamorfomago(pocion,nombre, apellido, varita, null, edad, casa);
                 Scanner verif2=new Scanner(System.in);
-                System.out.println("Desea crear el curso con la informacion deseada? S/N:  ");
+                System.out.println("Desea crear el estudiante con la informacion deseada? S/N:  ");
                 if(verif2.next().equalsIgnoreCase("S")){
-
+                    estudiantes.add(met);
+                    est.escrituraest(estudiantes);
+                }else{
+                    menuplanificador();
                 }
                 break;
             case 3:
                 System.out.println("¿Cual es su deporte favorito?: ");
                 Scanner dep=new Scanner(System.in);
                 String deporte=dep.nextLine();
-                Normal norm = new Normal(deporte, nombre, apellido, varita, fecha_ingreso, edad, casa);
+                Normal norm = new Normal(deporte, nombre, apellido, varita, null, edad, casa);
                 Scanner verif3=new Scanner(System.in);
-                System.out.println("Desea crear el curso con la informacion deseada? S/N:  ");
+                System.out.println("Desea crear el estudiante con la informacion deseada? S/N:  ");
                 if(verif3.next().equalsIgnoreCase("S")){
-
+                    estudiantes.add(norm);
+                    est.escrituraest(estudiantes);
+                }else{
+                    menuplanificador();
                 }
+                break;
     }
     }
     public void VerhorariosPlanificados(){

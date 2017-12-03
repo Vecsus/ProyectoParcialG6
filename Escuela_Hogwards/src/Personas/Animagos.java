@@ -19,7 +19,16 @@ public class Animagos extends Brujo_Mago implements Volador{
         this.hechizo = hechizo;
     }
 
-
+    @Override
+    public String toString(){
+        String normal=GetNombre()+", "+GetApellido()+", "+GetEdad()+" ,"+GetVarita()+" ,"+GetCasa().name()+" ,A";
+        return normal;
+    }
+    
+    public String toStringProfesor(){
+        String normal=GetNombre()+", "+GetApellido()+", "+GetEdad()+" ,"+GetVarita()+" ,"+getFecha_ingreso()+" ,A ,"+getAnimal()+" ,"+getHechizo();
+        return normal;
+    }
 
 
 

@@ -29,6 +29,11 @@ public class Curso {
         this.capacidad = capacidad;
     }
 
+    @Override
+    public String toString(){
+        String curso=getMateria().name()+" ,"+getProfesor().GetNombre()+" "+getProfesor().GetApellido()+", "+getCapacidad()+" ,"+getHorario();
+        return curso;
+    }
     public Materias getMateria() {
         return materia;
     }
@@ -60,6 +65,16 @@ public class Curso {
     public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
     }
+
+    public Brujo_Mago getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(Brujo_Mago profesor) {
+        this.profesor = profesor;
+    }
+
+
     
     
 }

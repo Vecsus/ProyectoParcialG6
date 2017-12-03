@@ -17,7 +17,16 @@ public class Normal extends Brujo_Mago implements Volador{
         this.deportef = deportef;
     }
 
-
+    @Override
+    public String toString(){
+        String normal=GetNombre()+", "+GetApellido()+", "+GetEdad()+" ,"+GetVarita()+" ,"+GetCasa().name()+" ,N";
+        return normal;
+    }
+    
+    public String toStringProfesor(){
+        String normal=GetNombre()+", "+GetApellido()+", "+GetEdad()+" ,"+GetVarita()+" ,"+getFecha_ingreso()+" ,N ,"+getDeportef();
+        return normal;
+    }
 
 
     public void setDeportef(String deportef) {
