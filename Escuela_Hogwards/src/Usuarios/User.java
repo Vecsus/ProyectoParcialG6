@@ -8,6 +8,7 @@ package Usuarios;
 import CursMate.Curso;
 import CursMate.Dias;
 import CursMate.Materias;
+import CursMate.Registros;
 import Personas.Brujo_Mago;
 import Personas.Casas_Hogwards;
 import Writer_Reader.Lectura;
@@ -29,6 +30,7 @@ public class User {
     public ArrayList<Curso> cursos = new ArrayList<Curso>();
     public ArrayList<Brujo_Mago> estudiantes = new ArrayList<Brujo_Mago>();
     public ArrayList<Brujo_Mago> profesores = new ArrayList<Brujo_Mago>();
+    public ArrayList<Registros> registros = new ArrayList<Registros>();
 
     public User(String nusuario, String contraseña, Brujo_Mago est,String rol) {
         this.rol = rol;
