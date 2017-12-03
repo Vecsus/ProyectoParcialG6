@@ -8,16 +8,16 @@ import java.util.ArrayList;
 import CursMate.*;
 import Personas.*;
 import Writer_Reader.Escritura;
-import Writer_Reader.Lectura;
 import java.util.Scanner;
-
+import java.util.Collections;
+import java.util.Comparator;
 /**
  *
  * @author Usuario
  */
 public class Planificador extends User {
     
-            Lectura et=new Lectura();
+    
 
     public Planificador(String nusuario, String contraseña, Brujo_Mago est,String rol) {
         super(nusuario, contraseña, est,rol);
@@ -55,8 +55,6 @@ public class Planificador extends User {
     }
     public void crearCurso(){
         Materias materia;Brujo_Mago profesor;int capacidad;Dias dia;String horario;
-        et.lecturprofe(profesores);
-        et.lecturcurso(cursos);
         //Eleccion de materia
         Scanner mat= new Scanner(System.in);
         System.out.println("/''MATERIAS ''/");
@@ -72,7 +70,7 @@ public class Planificador extends User {
             System.out.println(i+1+". "+profesores.get(i).GetNombre()+" "+profesores.get(i).GetApellido());
         }
         System.out.println("Elija un profesor del listado: ");
-        profesor=profesores.get(profe.nextInt()-1);
+        profesor=profesores.get(profe.nextInt());
         //Eleccion de capacidad de curso
         Scanner cap=new Scanner(System.in);
         System.out.println("Ingrese la capacidad del curso para "+materia.name());
@@ -108,7 +106,6 @@ public class Planificador extends User {
     public void crearProfesor(){
         String nombre, apellido,fecha_ingreso,varita;int edad;
         Escritura esc=new Escritura();
-        et.lecturprofe(profesores);
                             
         System.out.println("/** CREAR PROFESOR **/");
         Scanner nom=new Scanner(System.in);
@@ -149,12 +146,12 @@ public class Planificador extends User {
                 
                 System.out.println("¿Que hechizo puede usar?: ");
                 Scanner hech=new Scanner(System.in);
-                String hechizo=hech.nextLine();
+                String hechizo=anim.nextLine();
                 
                 Scanner verif=new Scanner(System.in);
                 System.out.println("Desea crear el profesor con la informacion deseada? S/N:  ");
                 if(verif.next().equalsIgnoreCase("S")){
-                    Animagos ani = new Animagos(animal,hechizo,nombre, apellido, varita, fecha_ingreso, edad, null);
+                    Animagos ani = new Animagos(hechizo,animal,nombre, apellido, varita, fecha_ingreso, edad, null);
                     profesores.add(ani);
                     esc.escrituraprof(profesores);
                 }else{
@@ -198,7 +195,6 @@ public class Planificador extends User {
     public void crearEstudiante(){
     String nombre, apellido,varita;int edad; Casas_Hogwards casa;
     Escritura est=new Escritura();
-    et.lecturestu(estudiantes);
     System.out.println("/** CREAR ESTUDIANTE **/");
     Scanner nom=new Scanner(System.in);
         System.out.println("Ingrese Nombre: ");
@@ -240,7 +236,7 @@ public class Planificador extends User {
                 
                 System.out.println("¿Que hechizo puede usar?: ");
                 Scanner hech=new Scanner(System.in);
-                String hechizo=hech.nextLine();
+                String hechizo=anim.nextLine();
                 
                 Animagos ani = new Animagos(hechizo,animal,nombre, apellido, varita, null, edad, casa);
                 Scanner verif=new Scanner(System.in);
@@ -370,5 +366,94 @@ public class Planificador extends User {
     }
     }
     }
-    public void ListadoEstudiantes(){}
+    
+    public void ListadoEstudiantes(){
+    System.out.println("/** LISTADO DE ESTUDIANTES**/");
+    System.out.println("1. Edad"+"/n"+"2. Nombre"+"/n"+"3. Numero de materias registradas");
+    System.out.println("Escoja el criterio para ordenar:");
+    Scanner sc = new Scanner(System.in);
+    int eleccion = sc.nextInt();
+    switch(eleccion){
+        case 1:
+            Comparator<Brujo_Mago> comparator;
+            comparator = new Comparator<Brujo_Mago>(){
+            @Override
+            public int compare(Brujo_Mago t, Brujo_Mago t1) {
+              {
+                int resultado = Integer.compare(t.GetEdad(), t1.GetEdad());
+                if ( resultado != 0 ) { return resultado; }
+        
+                return resultado;  
+            }
+
+        }          
+    };
+            Collections.sort(estudiantes,comparator);
+            for(Brujo_Mago b: estudiantes){
+                int x = 0;
+                for(Registros reg: registros){
+                    
+                    if(b.GetNombre().equalsIgnoreCase(reg.getNombre())&&b.GetApellido().equalsIgnoreCase(reg.getApellidos())){
+                        x++;
+                    }
+                }
+                System.out.println(b.GetNombre()+" "+b.GetApellido()+" -- "+b.GetEdad()+" -- " +b.GetCasa()+" -- "+x+" materias");
+            }
+            break;
+        case 2:
+            Comparator<Brujo_Mago> comparator2;
+            comparator2 = new Comparator<Brujo_Mago>(){
+                @Override
+                public int compare(Brujo_Mago t, Brujo_Mago t1){
+                    {
+                        int resultado1 = t.GetNombre().compareTo(t1.GetNombre());
+                        if (resultado1 != 0){return resultado1;}
+                        return resultado1;
+                    }
+                    
+                }
+            };
+            Collections.sort(estudiantes,comparator2);
+            for(Brujo_Mago b:estudiantes){
+                int x = 0;
+                for(Registros reg: registros){
+                    
+                    if(b.GetNombre().equalsIgnoreCase(reg.getNombre())&&b.GetApellido().equalsIgnoreCase(reg.getApellidos())){
+                        x++;
+                    }
+                }
+                System.out.println(b.GetNombre()+" "+b.GetApellido()+" -- "+b.GetEdad()+" -- " +b.GetCasa()+" -- "+x+" materias");
+            }
+            break;
+        case 3:
+            for(Brujo_Mago b:estudiantes){
+                int x = 0;
+                for(Registros reg: registros){
+                    
+                    if(b.GetNombre().equalsIgnoreCase(reg.getNombre())&&b.GetApellido().equalsIgnoreCase(reg.getApellidos())){
+                        x++;
+                    }
+                    EstudiantesRegistros er= new EstudiantesRegistros(x,b);
+                    estreg.add(er);
+                }
+                Comparator<EstudiantesRegistros> comparator3;
+                comparator3 = new Comparator<EstudiantesRegistros>(){
+                    @Override
+                    public int compare(EstudiantesRegistros t, EstudiantesRegistros t1) {
+                        int resultado2 = Integer.compare(t.getContador(), t.getContador());
+                        if ( resultado2 != 0 ) { return resultado2; }
+                        return resultado2;
+                    }
+                    };
+                Collections.sort(estreg,comparator3);
+                for(Brujo_Mago br:estudiantes){
+                    for(EstudiantesRegistros er: estreg){
+                        if(b.equals(er.getEstudiante())){
+                            System.out.println(b.GetNombre()+" "+b.GetApellido()+" -- "+b.GetEdad()+" -- " +b.GetCasa()+" -- "+er.getContador()+" materias");
+                        }
+                    }
+                }
+                }
+}
+}
 }
