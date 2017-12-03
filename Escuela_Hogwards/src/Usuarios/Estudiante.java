@@ -6,14 +6,20 @@
 package Usuarios;
 import CursMate.Curso;
 import CursMate.Materias;
+import CursMate.Registros;
+import Personas.Animagos;
 import Personas.Brujo_Mago;
+import Personas.Metamorfomago;
+import Personas.Normal;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Date;
 /**
  *
  * @author Usuario
  */
 public class Estudiante extends User {
+        
 
     public Estudiante(String nusuario, String contraseña, Brujo_Mago est,String rol) {
         super(nusuario, contraseña, est,rol);
@@ -129,10 +135,264 @@ public class Estudiante extends User {
     }
     }
     public void Registro(){
-    
+    String nombre = "", apellidos = "";
+    String fecha = "";
+    String tipo = "";
+    String horario = "";
+    Materias materia = null;
+    System.out.println("/** REGISTROS **/");
+        for(int i=0;i<materias.length;i++){
+            System.out.println(i+1+". "+materias[i].name());
+        }
+        System.out.println("Escoja la materia a registrar:");
+        Scanner sc =new Scanner(System.in);
+        int eleccion = sc.nextInt();
+        switch(eleccion){
+            
+            case 1:
+                for(Curso c: cursos){
+                    if(materias[0].equals(c.getMateria())){
+                        horario = c.getDia()+","+c.getHorario();
+                        
+                    }
+                }
+                System.out.println("El horario de"+materias[0]+"es"+horario);
+                for(Brujo_Mago bru: estudiantes){
+                    if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
+                        java.util.Date fech = new Date();
+                        fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0];
+                        if(est.GetEdad() < 15){
+                            tipo = "E";
+                        }
+                        else{tipo = "N";
+                    }   
+                }    
+        }
+        Scanner verif=new Scanner(System.in);
+        System.out.println("¿Desea registrarse? S/N:  ");
+        if(verif.next().equalsIgnoreCase("S")){
+             Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
+             registros.add(reg);
+              System.out.println("Se ha registrado la materia");
+        }
+        else{
+            menuEstudiante();
+        }
+        break;
+            case 2:
+                for(Curso c: cursos){
+                    if(materias[1].equals(c.getMateria())){
+                        horario = c.getDia()+","+c.getHorario();
+                        
+                    }
+                }
+                System.out.println("El horario de"+materias[1]+"es"+horario);
+                for(Brujo_Mago bru: estudiantes){
+                    if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
+                        java.util.Date fech = new Date();
+                        fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0];
+                        if(est.GetEdad() < 15){
+                            tipo = "E";
+                        }
+                        else{tipo = "N";
+                    }   
+                }    
+        }
+        Scanner verif1=new Scanner(System.in);
+        System.out.println("¿Desea registrarse? S/N:  ");
+        if(verif1.next().equalsIgnoreCase("S")){
+             Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
+             registros.add(reg);
+              System.out.println("Se ha registrado la materia");
+        }
+        else{
+            menuEstudiante();
+        }
+        break;
+            case 3:
+                for(Curso c: cursos){
+                    if(materias[2].equals(c.getMateria())){
+                        horario = c.getDia()+","+c.getHorario();
+                        
+                    }
+                }
+                System.out.println("El horario de"+materias[2]+"es"+horario);
+                for(Brujo_Mago bru: estudiantes){
+                    if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
+                        java.util.Date fech = new Date();
+                        fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0];
+                        if(est.GetEdad() < 15){
+                            tipo = "E";
+                        }
+                        else{tipo = "N";
+                    }   
+                }    
+        }
+        Scanner verif2=new Scanner(System.in);
+        System.out.println("¿Desea registrarse? S/N:  ");
+        if(verif2.next().equalsIgnoreCase("S")){
+             Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
+             registros.add(reg);
+              System.out.println("Se ha registrado la materia");
+        }
+        else{
+            menuEstudiante();
+        }
+        break;
+            case 4:
+                for(Curso c: cursos){
+                    if(materias[3].equals(c.getMateria())){
+                        horario = c.getDia()+","+c.getHorario();
+                        
+                    }
+                }
+                System.out.println("El horario de"+materias[3]+"es"+horario);
+                for(Brujo_Mago bru: estudiantes){
+                    if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
+                        java.util.Date fech = new Date();
+                        fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0]; tipo = "N";
+                          
+                }    
+        }
+        Scanner verif3=new Scanner(System.in);
+        System.out.println("¿Desea registrarse? S/N:  ");
+        if(verif3.next().equalsIgnoreCase("S")){
+             Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
+             registros.add(reg);
+              System.out.println("Se ha registrado la materia");
+        }
+        else{
+            menuEstudiante();
+        }
+        break;
+            case 5:
+                for(Curso c: cursos){
+                    if(materias[4].equals(c.getMateria())){
+                        horario = c.getDia()+","+c.getHorario();
+                        
+                    }
+                }
+                System.out.println("El horario de"+materias[0]+"es"+horario);
+                for(Brujo_Mago bru: estudiantes){
+                    if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
+                        java.util.Date fech = new Date();
+                        fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0]; tipo = "N";
+                          
+                }    
+        }
+        Scanner verif4=new Scanner(System.in);
+        System.out.println("¿Desea registrarse? S/N:  ");
+        if(verif4.next().equalsIgnoreCase("S")){
+             Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
+             registros.add(reg);
+              System.out.println("Se ha registrado la materia");
+        }
+        else{
+            menuEstudiante();
+        }
+        break;
+        case 6:
+                for(Curso c: cursos){
+                    if(materias[5].equals(c.getMateria())){
+                        horario = c.getDia()+","+c.getHorario();
+                        
+                    }
+                }
+                System.out.println("El horario de"+materias[5]+"es"+horario);
+                for(Brujo_Mago bru: estudiantes){
+                    if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
+                        java.util.Date fech = new Date();
+                        fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0]; tipo = "N";
+                          
+                }    
+        }
+        Scanner verif5=new Scanner(System.in);
+        System.out.println("¿Desea registrarse? S/N:  ");
+        if(verif5.next().equalsIgnoreCase("S")){
+             Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
+             registros.add(reg);
+              System.out.println("Se ha registrado la materia");
+        }
+        else{
+            menuEstudiante();
+        }
+        break;
+        case 7:
+                for(Curso c: cursos){
+                    if(materias[6].equals(c.getMateria())){
+                        horario = c.getDia()+","+c.getHorario();
+                        
+                    }
+                }
+                System.out.println("El horario de"+materias[6]+"es"+horario);
+                for(Brujo_Mago bru: estudiantes){
+                    if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
+                        java.util.Date fech = new Date();
+                        fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0]; tipo = "N";
+                          
+                }    
+        }
+        Scanner verif6=new Scanner(System.in);
+        System.out.println("¿Desea registrarse? S/N:  ");
+        if(verif6.next().equalsIgnoreCase("S")){
+             Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
+             registros.add(reg);
+              System.out.println("Se ha registrado la materia");
+        }
+        else{
+            menuEstudiante();
+        }
+        break;
+        case 8:
+                for(Curso c: cursos){
+                    if(materias[7].equals(c.getMateria())){
+                        horario = c.getDia()+","+c.getHorario();
+                        
+                    }
+                }
+                System.out.println("El horario de"+materias[7]+"es"+horario);
+                for(Brujo_Mago bru: estudiantes){
+                    if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
+                        java.util.Date fech = new Date();
+                        fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0]; tipo = "N";
+                          
+                }    
+        }
+        Scanner verif7=new Scanner(System.in);
+        System.out.println("¿Desea registrarse? S/N:  ");
+        if(verif7.next().equalsIgnoreCase("S")){
+             Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
+             registros.add(reg);
+             System.out.println("Se ha registrado la materia");
+        }
+        else{
+            menuEstudiante();
+        }
+        break;
+    }
     }
     public void DescripcionVuelo(){
-        
+        for(Brujo_Mago bru: estudiantes){
+            if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
+            if(est instanceof Animagos){
+            System.out.println("Usted es un animago, para volar necesita su varita");
+            }
+            if(est instanceof Normal){
+                System.out.println("Usted es un mago Normal, para volar necesita su Nimbus 2000");
+            }
+            if(est instanceof Metamorfomago){
+                System.out.println("Usted es un metamorfomago, para volar necesita de su poder");
+            }
+        }
+        }
     }
     
 }
