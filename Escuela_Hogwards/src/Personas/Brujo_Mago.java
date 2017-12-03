@@ -14,11 +14,10 @@ public class Brujo_Mago {
     int edad;
     Casas_Hogwards casa;
 
-    public Brujo_Mago(String nombre, String apellido, String varita, String cargo, String fecha_ingreso, int edad, Casas_Hogwards casa) {
+    public Brujo_Mago(String nombre, String apellido, String varita, String fecha_ingreso, int edad, Casas_Hogwards casa) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.varita = varita;
-        this.cargo = cargo;
         this.fecha_ingreso = fecha_ingreso;
         this.edad = edad;
         this.casa = casa;
@@ -68,5 +67,8 @@ public class Brujo_Mago {
     }
     public void SetCasa(Casas_Hogwards casa){
         this.casa = casa;
+    }
+    public void volar(){
+        
     }
 }

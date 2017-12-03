@@ -12,8 +12,8 @@ package Personas;
 public class Metamorfomago extends Brujo_Mago implements Volador{
     private  String pocion;
 
-    public Metamorfomago(String pocion, String nombre, String apellido, String varita, String cargo, String fecha_ingreso, int edad, Casas_Hogwards casa) {
-        super(nombre, apellido, varita, cargo, fecha_ingreso, edad, casa);
+    public Metamorfomago(String pocion, String nombre, String apellido, String varita, String fecha_ingreso, int edad, Casas_Hogwards casa) {
+        super(nombre, apellido, varita, fecha_ingreso, edad, casa);
         this.pocion = pocion;
     }
 

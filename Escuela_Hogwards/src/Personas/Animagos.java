@@ -11,10 +11,12 @@ package Personas;
  */
 public class Animagos extends Brujo_Mago implements Volador{
     private String animal;
+    private String hechizo;
 
-    public Animagos(String animal, String nombre, String apellido, String varita, String cargo, String fecha_ingreso, int edad, Casas_Hogwards casa) {
-        super(nombre, apellido, varita, cargo, fecha_ingreso, edad, casa);
+    public Animagos(String animal, String hechizo, String nombre, String apellido, String varita, String fecha_ingreso, int edad, Casas_Hogwards casa) {
+        super(nombre, apellido, varita, fecha_ingreso, edad, casa);
         this.animal = animal;
+        this.hechizo = hechizo;
     }
 
 
@@ -27,6 +29,12 @@ public class Animagos extends Brujo_Mago implements Volador{
 
     public String getAnimal() {
         return animal;
+    }
+    public void setHechizo(String hechizo){
+        this.hechizo = hechizo;
+    }
+    public String getHechizo(){
+        return hechizo;
     }
 
     @Override
