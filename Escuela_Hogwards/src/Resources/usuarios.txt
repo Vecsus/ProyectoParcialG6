@@ -1,2 +1,5 @@
 adum,adum34,Albus,Dumbledore,planificador
 hapott,hapotter124,Harry,Potter,estudiante
+hergran,hergran,Hermione,Granger,estudiante
+dracm,dracm,Draco,Malfoy,estudiante
+colcree,colcree,Colin,Creevey,estudiante
