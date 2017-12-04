@@ -9,6 +9,7 @@ package Writer_Reader;
 import CursMate.Curso;
 import CursMate.Dias;
 import CursMate.Materias;
+import CursMate.Registros;
 import Personas.*;
 import Usuarios.User;
 import escuela_hogwards.Escuela_Hogwards;
@@ -25,6 +26,7 @@ public class Lectura {
     String tea=s+"profesores.txt";
     String par=s+"cursos.txt";
     String use=s+"usuarios.txt";
+    String reeg=s+"registros.txt";
     
     File archivo = null;
     FileReader fr = null;
@@ -171,6 +173,40 @@ public class Lectura {
         }
     } catch (Exception e) {
             System.out.println("Error al leer archivo usuarios: "+e);
+    }finally {
+        // En el finally cerramos el fichero, para asegurarnos
+        // que se cierra tanto si todo va bien como si salta 
+        // una excepcion.
+        try {
+            if (null != fr) {
+                fr.close();
+            }
+        } catch (IOException e2) {
+            e2.printStackTrace();
+        } 
+    }
+    }
+    
+       public void lecturreg(ArrayList<Registros>regg){
+        try {
+        //Apertura del fichero y creacion de BufferedReader para poder
+        //hacer una lectura comoda (disponer del metodo readLine()).
+        InputStream inputstream = Lectura.class.getResourceAsStream(par);
+        InputStreamReader inputreader = new InputStreamReader(inputstream);
+        br = new BufferedReader(inputreader);
+        // Lectura del fichero
+        String linea;
+        while ((linea = br.readLine()) != null) {
+            String[]Lin=linea.split(",");
+            for(Registros pr:regg){
+                if(pr.getNombre().equalsIgnoreCase(Lin[1])&&pr.getApellidos().equalsIgnoreCase(Lin[2])){
+                Registros reig=new Registros(Lin[0], Lin[1], Lin[2], Lin[Lin.length-1], Materias.valueOf(Lin[3]));
+                regg.add(reig);
+                }
+            }
+        }
+    } catch (Exception e) {
+            System.out.println("Error al leer archivo cursos: "+e);;
     }finally {
         // En el finally cerramos el fichero, para asegurarnos
         // que se cierra tanto si todo va bien como si salta 

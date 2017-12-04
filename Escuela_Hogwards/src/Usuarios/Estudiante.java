@@ -6,6 +6,7 @@
 package Usuarios;
 import CursMate.*;
 import Personas.*;
+import Writer_Reader.Escritura;
 import Writer_Reader.Lectura;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import java.util.Date;
 public class Estudiante extends User {
         
     Lectura letest=new Lectura(); 
+    Escritura escest=new Escritura();
     
     public Estudiante(String nusuario, String contraseña, Brujo_Mago est,String rol) {
         super(nusuario, contraseña, est,rol);
@@ -173,6 +175,7 @@ public class Estudiante extends User {
         if(verif.next().equalsIgnoreCase("S")){
              Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
              registros.add(reg);
+             escest.escrituregist(registros);
               System.out.println("Se ha registrado la materia");
         }
         else{
@@ -191,7 +194,7 @@ public class Estudiante extends User {
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
                         fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
-                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0];
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[1];
                         if(est.GetEdad() < 15){
                             tipo = "E";
                         }
@@ -204,6 +207,7 @@ public class Estudiante extends User {
         if(verif1.next().equalsIgnoreCase("S")){
              Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
              registros.add(reg);
+             escest.escrituregist(registros);
               System.out.println("Se ha registrado la materia");
         }
         else{
@@ -222,7 +226,7 @@ public class Estudiante extends User {
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
                         fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
-                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0];
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[2];
                         if(est.GetEdad() < 15){
                             tipo = "E";
                         }
@@ -235,6 +239,7 @@ public class Estudiante extends User {
         if(verif2.next().equalsIgnoreCase("S")){
              Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
              registros.add(reg);
+             escest.escrituregist(registros);
               System.out.println("Se ha registrado la materia");
         }
         else{
@@ -253,7 +258,7 @@ public class Estudiante extends User {
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
                         fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
-                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0]; tipo = "N";
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[3]; tipo = "N";
                           
                 }    
         }
@@ -262,6 +267,7 @@ public class Estudiante extends User {
         if(verif3.next().equalsIgnoreCase("S")){
              Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
              registros.add(reg);
+             escest.escrituregist(registros);
               System.out.println("Se ha registrado la materia");
         }
         else{
@@ -280,7 +286,7 @@ public class Estudiante extends User {
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
                         fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
-                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0]; tipo = "N";
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[4]; tipo = "N";
                           
                 }    
         }
@@ -289,6 +295,7 @@ public class Estudiante extends User {
         if(verif4.next().equalsIgnoreCase("S")){
              Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
              registros.add(reg);
+             escest.escrituregist(registros);
               System.out.println("Se ha registrado la materia");
         }
         else{
@@ -307,7 +314,7 @@ public class Estudiante extends User {
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
                         fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
-                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0]; tipo = "N";
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[5]; tipo = "N";
                           
                 }    
         }
@@ -316,6 +323,7 @@ public class Estudiante extends User {
         if(verif5.next().equalsIgnoreCase("S")){
              Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
              registros.add(reg);
+             escest.escrituregist(registros);
               System.out.println("Se ha registrado la materia");
         }
         else{
@@ -334,7 +342,7 @@ public class Estudiante extends User {
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
                         fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
-                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0]; tipo = "N";
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[6]; tipo = "N";
                           
                 }    
         }
@@ -343,6 +351,7 @@ public class Estudiante extends User {
         if(verif6.next().equalsIgnoreCase("S")){
              Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
              registros.add(reg);
+             escest.escrituregist(registros);
               System.out.println("Se ha registrado la materia");
         }
         else{
@@ -361,7 +370,7 @@ public class Estudiante extends User {
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
                         fecha = " "+fech.getDate()+"/"+fech.getMonth()+"/"+fech.getYear();
-                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[0]; tipo = "N";
+                        nombre = est.GetNombre(); apellidos = est.GetApellido(); materia = materias[7]; tipo = "N";
                           
                 }    
         }
@@ -370,6 +379,7 @@ public class Estudiante extends User {
         if(verif7.next().equalsIgnoreCase("S")){
              Registros reg = new Registros(fecha, nombre, apellidos, tipo, materia);
              registros.add(reg);
+             escest.escrituregist(registros);
              System.out.println("Se ha registrado la materia");
         }
         else{

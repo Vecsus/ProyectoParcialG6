@@ -23,6 +23,12 @@ public class Registros {
         this.materia = materia;
         
     }
+    
+    @Override
+    public String toString(){
+        String regtoStr=getFecha()+","+getNombre()+","+getApellidos()+","+getMateria().name()+","+getTipo();
+        return regtoStr;
+    }
     public void setFecha(String fecha){
         this.fecha = fecha;
     }

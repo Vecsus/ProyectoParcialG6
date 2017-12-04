@@ -384,6 +384,7 @@ public class Planificador extends User {
     
     public void ListadoEstudiantes(){
         let.lecturestu(estudiantes);
+        let.lecturreg(registros);
     System.out.println("/** LISTADO DE ESTUDIANTES**/");
     System.out.println("1. Edad"+"\n"+"2. Nombre"+"\n"+"3. Numero de materias registradas");
     System.out.println("Escoja el criterio para ordenar:");
@@ -464,7 +465,7 @@ public class Planificador extends User {
                 Collections.sort(estreg,comparator3);
                 for(Brujo_Mago br:estudiantes){
                     for(EstudiantesRegistros er: estreg){
-                        if(br.equals(er.getEstudiante())){
+                        if((br.GetNombre().equalsIgnoreCase(er.getEstudiante().GetNombre()))&&(br.GetApellido().equalsIgnoreCase(er.getEstudiante().GetApellido()))){
                             System.out.println(br.GetNombre()+" "+br.GetApellido()+" -- "+br.GetEdad()+" -- " +br.GetCasa()+" -- "+er.getContador()+" materias");
                         }
                     }

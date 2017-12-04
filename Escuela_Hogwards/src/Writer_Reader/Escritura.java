@@ -26,6 +26,7 @@ public class Escritura {
     private final File teacher = new File(s+"profesores.txt");
     private final File curse = new File(s+"cursos.txt");
     private final File users = new File(s+"usuarios.txt");
+    private final File registross=new File(s+"registros.txt");
     
         FileWriter fr = null;
         BufferedWriter br = null;
@@ -136,6 +137,31 @@ public class Escritura {
     br = new BufferedWriter(fr);
     frr=new PrintWriter(br);
     us.forEach((usuar) -> {       
+        frr.append(usuar.toString()+"\n");
+        });
+    } catch (IOException e) {
+        System.out.println("Error: "+e);
+
+    }finally{
+            try {
+                frr.close();
+                br.close();
+                fr.close();
+            } catch (IOException ex) {
+                System.out.println("Error: "+ex);
+            }
+    }
+    }
+    
+        public void escrituregist(ArrayList<Registros>regist){
+                
+    try {
+        //Apertura del fichero y creacion de BufferedReader para poder
+        //hacer una escritura comoda (disponer del metodo readLine()).
+    fr = new FileWriter(registross);
+    br = new BufferedWriter(fr);
+    frr=new PrintWriter(br);
+    regist.forEach((usuar) -> {       
         frr.append(usuar.toString()+"\n");
         });
     } catch (IOException e) {
