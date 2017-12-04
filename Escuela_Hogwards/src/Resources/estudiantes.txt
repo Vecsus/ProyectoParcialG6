@@ -1,1 +1,6 @@
 Harry,Potter,15,cedro,Griffindor,N
+Sirius,Black,35,fenix,Hufflepuff,A
+Sirius,Black,35,fenix,Hufflepuff,M
+zero,drago,24,fenrir,Griffindor,N
+s,d,23,s,Slytherin,N
+f,sd,2,f,Griffindor,M

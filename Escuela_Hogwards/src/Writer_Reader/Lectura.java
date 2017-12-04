@@ -73,7 +73,7 @@ public class Lectura {
         try {
         //Apertura del fichero y creacion de BufferedReader para poder
         //hacer una lectura comoda (disponer del metodo readLine()).
-        inputstream = Lectura.class.getResourceAsStream(tea.toString());
+        inputstream = Lectura.class.getResourceAsStream(tea);
         inputreader = new InputStreamReader(inputstream);
         br = new BufferedReader(inputreader);
         // Lectura del fichero

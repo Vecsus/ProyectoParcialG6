@@ -250,8 +250,6 @@ public class Planificador extends User {
                 System.out.println("Desea crear el estudiante con la informacion deseada? S/N:  ");
                 if(verif.next().equalsIgnoreCase("S")){
                     estudiantes.add(ani);
-                    esho.usuarios.add(CrearUserEstudiante(ani));
-                    est.escriturausuar(esho.usuarios);
                     est.escrituraest(estudiantes);
                 }else{
                     menuplanificador();
@@ -267,8 +265,6 @@ public class Planificador extends User {
                 System.out.println("Desea crear el estudiante con la informacion deseada? S/N:  ");
                 if(verif2.next().equalsIgnoreCase("S")){
                     estudiantes.add(met);
-                    esho.usuarios.add(CrearUserEstudiante(met));
-                    est.escriturausuar(esho.usuarios);
                     est.escrituraest(estudiantes);
                 }else{
                     menuplanificador();
@@ -283,8 +279,6 @@ public class Planificador extends User {
                 System.out.println("Desea crear el estudiante con la informacion deseada? S/N:  ");
                 if(verif3.next().equalsIgnoreCase("S")){
                     estudiantes.add(norm);
-                    esho.usuarios.add(CrearUserEstudiante(norm));
-                    est.escriturausuar(esho.usuarios);
                     est.escrituraest(estudiantes);
                 }else{
                     menuplanificador();
@@ -299,6 +293,8 @@ public class Planificador extends User {
     return rei;
     }
     public void VerhorariosPlanificados(){
+        let.lecturcurso(cursos);
+        let.lecturprofe(profesores);
     System.out.println("/** CURSOS PLANIFICADOS **/");
      for(int i=0;i<materias.length;i++){
             System.out.println(i+1+". "+materias[i].name());
@@ -314,7 +310,7 @@ public class Planificador extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[0]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario+"/n"+"Registrados:"+registrados);
+                     System.out.println("Materia:"+materias[0]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario+"\n"+"Registrados:"+registrados);
                  }
                  
              }
@@ -325,7 +321,7 @@ public class Planificador extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[1]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario+"/n"+"Registrados:"+registrados);
+                     System.out.println("Materia:"+materias[1]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario+"\n"+"Registrados:"+registrados);
                  } 
      }
              break;
@@ -335,7 +331,7 @@ public class Planificador extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[2]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario+"/n"+"Registrados:"+registrados);
+                     System.out.println("Materia:"+materias[2]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario+"\n"+"Registrados:"+registrados);
                  }
     }       break;
          case 4:
@@ -344,7 +340,7 @@ public class Planificador extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[3]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario+"/n"+"Registrados:"+registrados);
+                     System.out.println("Materia:"+materias[3]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario+"\n"+"Registrados:"+registrados);
                  }
     }       break;
          case 5:
@@ -353,7 +349,7 @@ public class Planificador extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[4]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario+"/n"+"Registrados:"+registrados);
+                     System.out.println("Materia:"+materias[4]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario+"\n"+"Registrados:"+registrados);
                  }
     }       break;
          case 6:
@@ -362,7 +358,7 @@ public class Planificador extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[5]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario+"/n"+"Registrados:"+registrados);
+                     System.out.println("Materia:"+materias[5]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario+"\n"+"Registrados:"+registrados);
                  }
     }       break;
          case 7:
@@ -371,7 +367,7 @@ public class Planificador extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[6]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario+"/n"+"Registrados:"+registrados);
+                     System.out.println("Materia:"+materias[6]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario+"\n"+"Registrados:"+registrados);
                  }
     }       break;
          case 8:
@@ -380,15 +376,16 @@ public class Planificador extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[7]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario+"/n"+"Registrados:"+registrados);
+                     System.out.println("Materia:"+materias[7]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario+"\n"+"Registrados:"+registrados);
                  }
     }
     }
     }
     
     public void ListadoEstudiantes(){
+        let.lecturestu(estudiantes);
     System.out.println("/** LISTADO DE ESTUDIANTES**/");
-    System.out.println("1. Edad"+"/n"+"2. Nombre"+"/n"+"3. Numero de materias registradas");
+    System.out.println("1. Edad"+"\n"+"2. Nombre"+"\n"+"3. Numero de materias registradas");
     System.out.println("Escoja el criterio para ordenar:");
     Scanner sc = new Scanner(System.in);
     int eleccion = sc.nextInt();

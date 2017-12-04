@@ -41,15 +41,15 @@ public class Escritura {
     for(Brujo_Mago estudiante:Brujo){
         if(estudiante instanceof Normal){
             Normal estudiantes=(Normal)estudiante;
-            frr.append(estudiantes.toString());
+            frr.append(estudiantes.toString()+"\n");
         }
         if(estudiante instanceof Animagos){
            Animagos estudiantes=(Animagos)estudiante;
-            frr.append(estudiantes.toString()); 
+            frr.append(estudiantes.toString()+"\n"); 
         }
         if(estudiante instanceof Metamorfomago){
             Metamorfomago estudiantes=(Metamorfomago)estudiante;
-            frr.append(estudiantes.toString());
+            frr.append(estudiantes.toString()+"\n");
         }              
     }
 
@@ -77,14 +77,14 @@ public class Escritura {
     for(Brujo_Mago profesor:Brujo){
         if(profesor instanceof Normal){
             Normal profes=(Normal)profesor;
-            frr.append(profes.toStringProfesor());
+            frr.append(profes.toStringProfesor()+"\n");
         }
         if(profesor instanceof Animagos){
             Animagos profes=(Animagos)profesor;
-            frr.append(profes.toStringProfesor());
-        }else{
+            frr.append(profes.toStringProfesor()+"\n");
+        }if(profesor instanceof Metamorfomago){
             Metamorfomago profes=(Metamorfomago)profesor;
-            frr.append(profes.toStringProfesor());
+            frr.append(profes.toStringProfesor()+"\n");
         }              
     }
 
@@ -111,7 +111,7 @@ public class Escritura {
     br = new BufferedWriter(fr);
     frr=new PrintWriter(br);
     Curs.forEach((cursos8) -> {       
-        frr.append(cursos8.toString());
+        frr.append(cursos8.toString()+"\n");
         });
     } catch (IOException e) {
         System.out.println("Error: "+e);
@@ -132,11 +132,11 @@ public class Escritura {
     try {
         //Apertura del fichero y creacion de BufferedReader para poder
         //hacer una escritura comoda (disponer del metodo readLine()).
-    fr = new FileWriter(curse);
+    fr = new FileWriter(users);
     br = new BufferedWriter(fr);
     frr=new PrintWriter(br);
     us.forEach((usuar) -> {       
-        frr.append(usuar.toString());
+        frr.append(usuar.toString()+"\n");
         });
     } catch (IOException e) {
         System.out.println("Error: "+e);

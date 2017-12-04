@@ -6,6 +6,7 @@
 package Usuarios;
 import CursMate.*;
 import Personas.*;
+import Writer_Reader.Lectura;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,7 +16,8 @@ import java.util.Date;
  */
 public class Estudiante extends User {
         
-
+    Lectura letest=new Lectura(); 
+    
     public Estudiante(String nusuario, String contraseña, Brujo_Mago est,String rol) {
         super(nusuario, contraseña, est,rol);
     }
@@ -42,7 +44,7 @@ public class Estudiante extends User {
 
     }
     public void ConsultaCurso(){
-   
+        letest.lecturcurso(cursos);
     System.out.println("/** CURSOS PLANIFICADOS **/");
      for(int i=0;i<materias.length;i++){
             System.out.println(i+1+". "+materias[i].name());
@@ -58,7 +60,7 @@ public class Estudiante extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[0]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario);
+                     System.out.println("Materia:"+materias[0]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario);
                  }
                  
              }
@@ -69,7 +71,7 @@ public class Estudiante extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[1]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario);
+                     System.out.println("Materia:"+materias[1]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario);
                  } 
      }
              break;
@@ -79,7 +81,7 @@ public class Estudiante extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[2]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario);
+                     System.out.println("Materia:"+materias[2]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario);
                  }
     }       break;
          case 4:
@@ -88,7 +90,7 @@ public class Estudiante extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[3]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario);
+                     System.out.println("Materia:"+materias[3]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario);
                  }
     }       break;
          case 5:
@@ -97,7 +99,7 @@ public class Estudiante extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[4]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario);
+                     System.out.println("Materia:"+materias[4]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario);
                  }
     }       break;
          case 6:
@@ -106,7 +108,7 @@ public class Estudiante extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[5]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario);
+                     System.out.println("Materia:"+materias[5]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario);
                  }
     }       break;
          case 7:
@@ -115,7 +117,7 @@ public class Estudiante extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[6]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario);
+                     System.out.println("Materia:"+materias[6]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario);
                  }
     }       break;
          case 8:
@@ -124,12 +126,14 @@ public class Estudiante extends User {
                      String profesor = c.getProfesor().GetNombre()+" "+ c.getProfesor().GetNombre();
                      String horario = c.getHorario();
                      int registrados = c.getCapacidad();
-                     System.out.println("Materia:"+materias[7]+"/n"+"Profesor:"+profesor+"/n"+"Horario:"+c.getDia()+","+horario);
+                     System.out.println("Materia:"+materias[7]+"\n"+"Profesor:"+profesor+"\n"+"Horario:"+c.getDia()+","+horario);
                  }
     }
     }
     }
     public void Registro(){
+        letest.lecturcurso(cursos);
+        letest.lecturestu(estudiantes);
     String nombre = "", apellidos = "";
     String fecha = "";
     String tipo = "";
@@ -375,6 +379,7 @@ public class Estudiante extends User {
     }
     }
     public void DescripcionVuelo(){
+        letest.lecturestu(estudiantes);
         for(Brujo_Mago bru: estudiantes){
             if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
             if(est instanceof Animagos){
