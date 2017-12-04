@@ -24,7 +24,7 @@ import java.util.Scanner;
 public class User {
     private String rol;
     private String nusuario,contraseña;
-    private Brujo_Mago est;
+     Brujo_Mago est;
     public Materias[]materias=new Materias[]{Materias.Pociones,Materias.Defensascontraartesocuras,Materias.Adivinacion,Materias.Astronomia,Materias.Historiademagia,Materias.Herbologia,Materias.Encantamientos,Materias.Vuelo};
     public Dias[]dias=new Dias[]{Dias.Lunes,Dias.Martes,Dias.Miercoles,Dias.Jueves,Dias.Viernes,Dias.Sabado,Dias.Domingo};
     public Casas_Hogwards[]casashog=new Casas_Hogwards[]{Casas_Hogwards.Griffindor,Casas_Hogwards.Hufflepuff,Casas_Hogwards.Ravenclaw,Casas_Hogwards.Slytherin};
