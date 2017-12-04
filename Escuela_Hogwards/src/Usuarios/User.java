@@ -11,6 +11,7 @@ import CursMate.Materias;
 import CursMate.Registros;
 import Personas.Brujo_Mago;
 import Personas.Casas_Hogwards;
+import Personas.EstudiantesRegistros;
 import Writer_Reader.Lectura;
 import escuela_hogwards.Escuela_Hogwards;
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class User {
     public ArrayList<Brujo_Mago> estudiantes = new ArrayList<Brujo_Mago>();
     public ArrayList<Brujo_Mago> profesores = new ArrayList<Brujo_Mago>();
     public ArrayList<Registros> registros = new ArrayList<Registros>();
+    public ArrayList<EstudiantesRegistros>estreg=new ArrayList<EstudiantesRegistros>();
 
     public User(String nusuario, String contraseña, Brujo_Mago est,String rol) {
         this.rol = rol;

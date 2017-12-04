@@ -7,8 +7,7 @@ package Usuarios;
 import java.util.ArrayList;
 import CursMate.*;
 import Personas.*;
-import Writer_Reader.Escritura;
-import Writer_Reader.Lectura;
+import Writer_Reader.*;
 import escuela_hogwards.Escuela_Hogwards;
 import java.util.Scanner;
 import java.util.Collections;
@@ -468,8 +467,8 @@ public class Planificador extends User {
                 Collections.sort(estreg,comparator3);
                 for(Brujo_Mago br:estudiantes){
                     for(EstudiantesRegistros er: estreg){
-                        if(b.equals(er.getEstudiante())){
-                            System.out.println(b.GetNombre()+" "+b.GetApellido()+" -- "+b.GetEdad()+" -- " +b.GetCasa()+" -- "+er.getContador()+" materias");
+                        if(br.equals(er.getEstudiante())){
+                            System.out.println(br.GetNombre()+" "+br.GetApellido()+" -- "+br.GetEdad()+" -- " +br.GetCasa()+" -- "+er.getContador()+" materias");
                         }
                     }
                 }

@@ -4,13 +4,8 @@
  * and open the template in the editor.
  */
 package Usuarios;
-import CursMate.Curso;
-import CursMate.Materias;
-import CursMate.Registros;
-import Personas.Animagos;
-import Personas.Brujo_Mago;
-import Personas.Metamorfomago;
-import Personas.Normal;
+import CursMate.*;
+import Personas.*;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Date;
