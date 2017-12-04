@@ -177,7 +177,5 @@ public class Escritura {
             }
     }
     }
-    public static void main(String[] arg) {
-        Escritura es=new Escritura();
-        }
+
 }

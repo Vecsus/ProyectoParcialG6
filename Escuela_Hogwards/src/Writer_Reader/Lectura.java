@@ -220,17 +220,5 @@ public class Lectura {
         } 
     }
     }
-        public static void main(String[] arg) {
-        Lectura le=new Lectura();
-        Escuela_Hogwards as=new Escuela_Hogwards();
-        ArrayList<Brujo_Mago>estid=new ArrayList<>();
-        ArrayList<User>estd=new ArrayList<>();
-        /**le.lecturuse(as.usuarios);
-        for(User an:as.usuarios){
-            System.out.println(an);
-        }**/
-        le.lecturprofe(estid);
-
-        }
         
 }
