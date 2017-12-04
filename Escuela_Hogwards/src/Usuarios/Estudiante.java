@@ -134,12 +134,12 @@ public class Estudiante extends User {
     public void Registro(){
         letest.lecturcurso(cursos);
         letest.lecturestu(estudiantes);
-    String nombre = "", apellidos = "";
-    String fecha = "";
-    String tipo = "";
-    String horario = "";
-    Materias materia = null;
-    System.out.println("/** REGISTROS **/");
+        String nombre = "", apellidos = "";
+        String fecha = "";
+        String tipo = "";
+        String horario = "";
+        Materias materia = null;
+        System.out.println("/** REGISTROS **/");
         for(int i=0;i<materias.length;i++){
             System.out.println(i+1+". "+materias[i].name());
         }
@@ -155,7 +155,7 @@ public class Estudiante extends User {
                         
                     }
                 }
-                System.out.println("El horario de"+materias[0]+"es"+horario);
+                System.out.println("El horario de"+materias[0]+" es"+horario);
                 for(Brujo_Mago bru: estudiantes){
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
@@ -186,7 +186,7 @@ public class Estudiante extends User {
                         
                     }
                 }
-                System.out.println("El horario de"+materias[1]+"es"+horario);
+                System.out.println("El horario de"+materias[1]+" es"+horario);
                 for(Brujo_Mago bru: estudiantes){
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
@@ -217,7 +217,7 @@ public class Estudiante extends User {
                         
                     }
                 }
-                System.out.println("El horario de"+materias[2]+"es"+horario);
+                System.out.println("El horario de"+materias[2]+" es"+horario);
                 for(Brujo_Mago bru: estudiantes){
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
@@ -248,7 +248,7 @@ public class Estudiante extends User {
                         
                     }
                 }
-                System.out.println("El horario de"+materias[3]+"es"+horario);
+                System.out.println("El horario de"+materias[3]+" es"+horario);
                 for(Brujo_Mago bru: estudiantes){
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
@@ -275,7 +275,7 @@ public class Estudiante extends User {
                         
                     }
                 }
-                System.out.println("El horario de"+materias[0]+"es"+horario);
+                System.out.println("El horario de"+materias[0]+" es"+horario);
                 for(Brujo_Mago bru: estudiantes){
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
@@ -302,7 +302,7 @@ public class Estudiante extends User {
                         
                     }
                 }
-                System.out.println("El horario de"+materias[5]+"es"+horario);
+                System.out.println("El horario de"+materias[5]+" es"+horario);
                 for(Brujo_Mago bru: estudiantes){
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
@@ -329,7 +329,7 @@ public class Estudiante extends User {
                         
                     }
                 }
-                System.out.println("El horario de"+materias[6]+"es"+horario);
+                System.out.println("El horario de"+materias[6]+" es"+horario);
                 for(Brujo_Mago bru: estudiantes){
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
@@ -356,7 +356,7 @@ public class Estudiante extends User {
                         
                     }
                 }
-                System.out.println("El horario de"+materias[7]+"es"+horario);
+                System.out.println("El horario de"+materias[7]+" es"+horario);
                 for(Brujo_Mago bru: estudiantes){
                     if(bru.GetNombre().equals(est.GetNombre())&&bru.GetApellido().equals(est.GetApellido())){
                         java.util.Date fech = new Date();
